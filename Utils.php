@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * I don't believe in license
+ * You can do whatever you want with this program
+ */
+
 class Utils
 {
 	public static function cutter( $open_tag, $close_tag, $str, $pos )

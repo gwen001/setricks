@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * I don't believe in license
+ * You can do whatever you want with this program
+ */
+
 require( getcwd().'/config.php' );
 require( getcwd().'/autoload.php' );
 
@@ -60,7 +65,7 @@ if( !$error ) {
 			exit('error !');
 		}
 		$t_result = $separse->getResult();
-		//var_dump( $t_result );
+		// var_dump( $t_result );
 		$t_url = SeTricks::getAllUrl( $t_result );
 	}
 }
@@ -112,13 +117,13 @@ if( !$error ) {
 			<?php if ( isset($t_url) ) { ?>
 				<table width="100%">
 					<tbody>
-						<?php for( $i=1 ; list($k,$lnk)=each($t_url) ; $i++ ) { ?>
+						<?php $i=1; foreach( $t_url as $k=>$lnk ) { ?>
 						<tr>
 							<td align="right" width="3%"><?php echo $i; ?>.</td>
 							<td align="left" width="45%"><a href="<?php echo $lnk[0]; ?>" target="_blank"><?php echo $lnk[0]; ?></a></td>
 							<td align="left" width="45%"><?php echo $lnk[1]; ?></td>
 						</tr>
-						<?php } ?>
+						<?php $i++; } ?>
 					</tbody>
 				</table>
 				<?php if( count($t_url) >= $separse->getMaxResult() ) { ?>

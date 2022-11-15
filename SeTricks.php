@@ -1,13 +1,20 @@
 <?php
 
+/**
+ * I don't believe in license
+ * You can do whatever you want with this program
+ */
+
 class SeTricks
 {
 	public static function getPosition( $parse_result, $site )
 	{
-		for( $i=0 ; list($k,$r)=each($parse_result) ; $i++ ) {
+		$i = 0;
+        foreach( $parse_result as $k=>$r ) {
 			if( stristr($r['url'],$site) ) {
 				return $i;
 			}
+            $i++;
 		}
 
 		return -1;
